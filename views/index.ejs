@@ -19,20 +19,43 @@
   <main class="main-content">
     <section class="card">
       <h2>💬 Talk to our AI Agent</h2>
-      <div class="iframe-container">
-        <iframe 
-          src="https://johnmiyahar-404fixers.hf.space" 
-          width="100%" 
-          height="600px" 
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <p>Need help with IT issues? Use the chatbot in the corner to get started!</p>
     </section>
   </main>
+
+  <!-- Chatbot Toggle Button -->
+  <div class="chat-toggle" onclick="toggleChat()">
+    💬 Chat with 404Fixers
+  </div>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <div class="chatbot-header">
+      <span>404Fixers AI Agent</span>
+      <button onclick="toggleChat()">✖</button>
+    </div>
+    <iframe 
+      src="https://johnmiyahar-404fixers.hf.space" 
+      class="chatbot-iframe">
+    </iframe>
+  </div>
 
   <footer>
     <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
   </footer>
+
+  <script>
+    function toggleChat() {
+      const widget = document.getElementById('chatbotWidget');
+      widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Optional: Open widget by default on desktop
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth > 768) {
+        document.getElementById('chatbotWidget').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
