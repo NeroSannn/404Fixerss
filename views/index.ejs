@@ -19,7 +19,7 @@
   <main class="main-content">
     <section class="card">
       <h2>💬 Talk to our AI Agent</h2>
-      <p>Need help with IT issues? Use the chatbot in the corner to get started!</p>
+      <p>Need help? Tap the chat bubble in the corner to speak with our AI agent.</p>
     </section>
   </main>
 
@@ -49,13 +49,6 @@
       const widget = document.getElementById('chatbotWidget');
       widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
     }
-
-    // Optional: Open widget by default on desktop
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth > 768) {
-        document.getElementById('chatbotWidget').style.display = 'none';
-      }
-    });
   </script>
 </body>
 </html>
