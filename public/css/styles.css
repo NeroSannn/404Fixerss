@@ -54,7 +54,7 @@ body {
   font-size: 1.75rem;
 }
 
-/* Floating Chatbot Widget */
+/* Chatbot Floating Button */
 .chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -69,26 +69,26 @@ body {
   font-size: 1rem;
 }
 
+/* Chatbot Widget */
 .chatbot-widget {
   position: fixed;
   bottom: 80px;
   right: 20px;
   width: 370px;
   height: 520px;
+  display: none;
+  flex-direction: column;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   background: white;
-  overflow: hidden;
-  display: none;
   z-index: 1000;
-  flex-direction: column;
+  overflow: hidden;
 }
 
 .chatbot-header {
   background: #0f4c81;
   color: white;
   padding: 0.75rem 1rem;
-  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,8 +102,51 @@ body {
   cursor: pointer;
 }
 
-.chatbot-iframe {
-  width: 100%;
-  height: calc(100% - 48px);
+.chatbot-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
+
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
   border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.chatbot-input button {
+  background: #0f4c81;
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.user {
+  text-align: right;
+  margin-bottom: 0.5rem;
+  color: #0f4c81;
+}
+
+.bot {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: #1f1f1f;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
