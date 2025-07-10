@@ -19,84 +19,31 @@
   <main class="main-content">
     <section class="card">
       <h2>💬 Talk to our AI Agent</h2>
-      <p>Need help? Tap the chat bubble in the corner to speak with our AI agent.</p>
+      <p>Our AI assistant is ready to help — look for the chat icon in the bottom-right corner!</p>
     </section>
   </main>
-
-  <!-- Chatbot Toggle Button -->
-  <div class="chat-toggle" onclick="toggleChat()">
-    💬 Chat with 404Fixers
-  </div>
-
-  <!-- Chatbot Widget -->
-  <div class="chatbot-widget" id="chatbotWidget">
-    <div class="chatbot-header">
-      <span>404Fixers AI Agent</span>
-      <button onclick="toggleChat()">✖</button>
-    </div>
-    <div class="chatbot-body" id="chatMessages"></div>
-    <div class="chatbot-input">
-      <input type="text" id="userInput" placeholder="Ask me anything..." />
-      <button onclick="sendMessage()">➤</button>
-    </div>
-  </div>
 
   <footer>
     <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
   </footer>
 
-  <script>
-    const chatflowId = "791afaea-62ec-403a-895c-546a2bc1752b";
-    const apiUrl = "https://johnmiyahar-404fixers.hf.space/api/v1/prediction";
-
-    function toggleChat() {
-      const widget = document.getElementById('chatbotWidget');
-      widget.style.display = widget.style.display === 'none' ? 'flex' : 'none';
-    }
-
-    async function sendMessage() {
-      const inputField = document.getElementById('userInput');
-      const message = inputField.value.trim();
-      if (!message) return;
-
-      appendMessage('user', message);
-      inputField.value = '';
-
-      try {
-        const res = await fetch(`${apiUrl}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            chatflowid: chatflowId,
-            question: message
-          })
-        });
-
-        const data = await res.json();
-        const reply = data.text || "Sorry, I couldn't understand that.";
-        appendMessage('bot', reply);
-      } catch (err) {
-        appendMessage('bot', "Error: Unable to reach AI.");
-      }
-    }
-
-    function appendMessage(sender, text) {
-      const chat = document.getElementById('chatMessages');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = sender;
-      messageDiv.textContent = text;
-      chat.appendChild(messageDiv);
-      chat.scrollTop = chat.scrollHeight;
-    }
-
-    // Optional: open on desktop by default
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth > 768) {
-        document.getElementById('chatbotWidget').style.display = 'none';
-      }
-    });
+  <!-- Flowise Embedded Chatbot -->
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+      chatflowid: "41eac460-20fd-43f7-9ad5-1dc15a4c7eae",
+      apiHost: "https://johnmiyahar-404fixers.hf.space",
+    })
   </script>
 </body>
 </html>
+<script>
+  // Ensure the chatbot is initialized after the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof Chatbot !== 'undefined') {
+      Chatbot.init({
+        chatflowid: "41eac460-20fd-43f7-9ad5-1dc15a4c7eae",
+        apiHost: "https://johnmiyahar-404fixers.hf.space",
+      });
+    }
+  });
