@@ -101,3 +101,76 @@
     margin-bottom: 2rem;
   }
 }
+/* =====================
+   HOME PAGE STYLING
+===================== */
+.site-header {
+  background: #0f4c81;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+}
+
+.site-header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.site-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.main-home {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  color: #0f3b6c;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.feature {
+  margin-top: 2rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #0f3b6c;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.site-footer {
+  background: #1f1f1f;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
