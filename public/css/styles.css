@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f1f4f9;
+  background-color: #f6f9fc;
   color: #333;
   line-height: 1.6;
 }
@@ -24,8 +24,7 @@ a {
   width: 100%;
 }
 
-.landing-left,
-.landing-right {
+.landing-left {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -34,8 +33,13 @@ a {
 }
 
 .landing-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
+  padding: 2rem;
 }
 
 .slogan {
@@ -56,7 +60,7 @@ a {
 }
 
 .get-started-btn:hover {
-  background-color: #00a693;
+  background-color: #009f8a;
 }
 
 /* Carousel */
@@ -64,7 +68,10 @@ a {
   position: relative;
   width: 100%;
   max-width: 450px;
-  height: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-img {
@@ -72,8 +79,12 @@ a {
   top: 0;
   left: 0;
   width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-img.active {
@@ -157,4 +168,32 @@ footer {
   padding: 1.5rem;
   font-size: 0.95rem;
   font-family: 'Blinker', sans-serif;
+}
+
+/* ---------- RESPONSIVE (Mobile) ---------- */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+    height: auto;
+    padding-top: 2rem;
+  }
+
+  .landing-left,
+  .landing-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .slogan {
+    font-size: 2.2rem;
+  }
+
+  .carousel {
+    max-width: 90%;
+  }
+
+  .get-started-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
 }
