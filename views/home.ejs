@@ -2,45 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404Fixers - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404Fixers | Home</title>
   <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <h1>404Fixers</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="navbar">
+    <div class="container nav-content">
+      <h1 class="logo">404Fixers</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="main-home">
-    <section class="intro">
+  <main class="container">
+    <section class="hero-section">
       <h2>Smart Solutions for Tech Troubles</h2>
       <p>Your digital helpdesk, 24/7.</p>
     </section>
 
-    <section class="feature" id="about">
+    <section class="info-card" id="about">
       <h3>💬 How does it work?</h3>
       <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
     </section>
 
-    <section class="feature" id="services">
+    <section class="info-card" id="services">
       <h3>🤖 Meet our team</h3>
       <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
     </section>
   </main>
 
-  <footer class="site-footer" id="contact">
+  <footer>
     <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
   </footer>
 
-  <!-- Chatbot -->
+  <!-- Flowise Chatbot -->
   <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
