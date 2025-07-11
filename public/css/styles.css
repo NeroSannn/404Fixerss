@@ -1,4 +1,7 @@
-/* ---------- GLOBAL ---------- */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap');
+
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,21 +10,18 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f6f9fc;
+  background-color: #f1f4f9;
   color: #333;
-  line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ---------- LANDING PAGE ---------- */
+/* Landing Page Layout */
 .landing-container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 100vh;
   width: 100%;
+  padding: 0 5%;
 }
 
 .landing-left {
@@ -29,57 +29,22 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  height: 100%;
 }
 
-.landing-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 2rem;
-}
-
-.slogan {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  color: #0f4c81;
-  margin-bottom: 2rem;
-}
-
-.get-started-btn {
-  padding: 1rem 2rem;
-  background-color: #00bfa6;
-  color: #fff;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  font-family: 'Inter', sans-serif;
-  transition: 0.3s ease;
-}
-
-.get-started-btn:hover {
-  background-color: #009f8a;
-}
-
-/* Carousel */
 .carousel {
-  position: relative;
   width: 100%;
   max-width: 450px;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .carousel-img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  max-height: 80vh;
+  max-height: 500px;
   object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -92,108 +57,79 @@ a {
   z-index: 1;
 }
 
-/* ---------- NAVBAR (HOME PAGE) ---------- */
-.navbar {
-  background: #0f4c81;
-  padding: 1rem 2rem;
+.landing-right {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: white;
-}
-
-.navbar .logo {
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar ul li a {
-  color: white;
-  font-weight: 500;
-}
-
-/* ---------- HERO (HOME PAGE) ---------- */
-.hero {
-  background: linear-gradient(90deg, #0f4c81, #005fa3);
-  color: white;
   text-align: center;
-  padding: 4rem 2rem;
+  height: 100%;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.landing-right h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  color: #0f3b6c;
+  margin-bottom: 1.5rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
+.teal-button {
+  font-family: 'Inter', sans-serif;
+  background-color: #00bfa5;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-/* ---------- FEATURES SECTION ---------- */
-.features {
-  padding: 3rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
+.teal-button:hover {
+  background-color: #009e8e;
 }
 
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
+/* Main Site Section Headings */
 .section-header {
   font-family: 'Blinker', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #0f4c81;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
 
-/* ---------- FOOTER ---------- */
+/* Footer */
 footer {
   background: #1f1f1f;
   color: #aaa;
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.95rem;
+  padding: 1rem;
+  font-size: 0.9rem;
   font-family: 'Blinker', sans-serif;
 }
 
-/* ---------- RESPONSIVE (Mobile) ---------- */
+/* Responsive Fixes */
 @media (max-width: 768px) {
   .landing-container {
     flex-direction: column;
+    padding: 2rem 1rem;
     height: auto;
-    padding-top: 2rem;
   }
 
   .landing-left,
   .landing-right {
     width: 100%;
-    padding: 1rem;
+    height: auto;
   }
 
-  .slogan {
-    font-size: 2.2rem;
+  .landing-right h1 {
+    font-size: 2rem;
   }
 
   .carousel {
-    max-width: 90%;
-  }
-
-  .get-started-btn {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 }
