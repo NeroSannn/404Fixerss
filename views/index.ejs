@@ -3,47 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404Fixers - IT Support</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>404Fixers - Landing</title>
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Blinker&family=Inter&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>🧠 404Fixers</h1>
-      <p>Where broken tech meets smart solutions.</p>
+  <section class="landing-container">
+    <div class="landing-left">
+      <div class="carousel">
+        <img src="/images/Gemini_Generated_Image_General.png" alt="Robot General" class="carousel-img active">
+        <img src="/images/Gemini_Generated_Image_Windows.png" alt="Robot Windows" class="carousel-img">
+        <img src="/images/Gemini_Generated_Image_Apple.png" alt="Robot Apple" class="carousel-img">
+        <img src="/images/Gemini_Generated_Image_Outlook.png" alt="Robot Outlook" class="carousel-img">
+      </div>
     </div>
-  </header>
+    <div class="landing-right">
+      <h1 class="slogan">Stop Searching,<br>Start Solving.</h1>
+      <a href="/home" class="get-started-btn">Get Started</a>
+    </div>
+  </section>
 
-  <main class="main-content">
-    <section class="card">
-      <h2>💬 Talk to our AI Agent</h2>
-      <p>Our AI assistant is ready to help — look for the chat icon in the bottom-right corner!</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
-  </footer>
-
-  <!-- Flowise Embedded Chatbot -->
-  <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-      chatflowid: "41eac460-20fd-43f7-9ad5-1dc15a4c7eae",
-      apiHost: "https://johnmiyahar-404fixers.hf.space",
-    })
+  <script>
+    const images = document.querySelectorAll('.carousel-img');
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000);
   </script>
 </body>
 </html>
-<script>
-  // Ensure the chatbot is initialized after the DOM is fully loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof Chatbot !== 'undefined') {
-      Chatbot.init({
-        chatflowid: "41eac460-20fd-43f7-9ad5-1dc15a4c7eae",
-        apiHost: "https://johnmiyahar-404fixers.hf.space",
-      });
-    }
-  });

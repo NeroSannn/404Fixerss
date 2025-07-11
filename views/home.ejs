@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404Fixers - Home</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Blinker&family=Inter&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">404Fixers</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Smart Solutions for Tech Troubles</h1>
+    <p>Your digital helpdesk, 24/7.</p>
+  </header>
+
+  <section class="features">
+    <div class="feature-card">
+      <h2 class="section-header">💬 How does it work?</h2>
+      <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
+    </div>
+    <div class="feature-card">
+      <h2 class="section-header">🤖 Meet our team</h2>
+      <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="section-header">© 2025 404Fixers. We fix what others fear.</p>
+  </footer>
+
+  <!-- Flowise Chatbot -->
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+      chatflowid: "41eac460-20fd-43f7-9ad5-1dc15a4c7eae",
+      apiHost: "https://johnmiyahar-404fixers.hf.space"
+    })
+  </script>
+</body>
+</html>
