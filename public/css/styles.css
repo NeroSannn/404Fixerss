@@ -107,3 +107,107 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* Landing Page Layout */
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 5%;
+  background-color: #f1f4f9;
+  gap: 2rem;
+}
+
+.landing-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Right side */
+.landing-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+
+.landing-right h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  color: #0f3b6c;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+/* Button styling */
+.teal-button {
+  font-family: 'Inter', sans-serif;
+  background-color: #00bfa5;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.teal-button:hover {
+  background-color: #009688;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .landing-right {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .landing-right h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    max-width: 80%;
+    margin-bottom: 2rem;
+  }
+}
