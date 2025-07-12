@@ -2,65 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404Fixers | Home</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-content">
-      <div class="logo">404Fixers</div>
-      <ul class="nav-links">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/chat">Chat</a></li>
-      </ul>
+  <header class="navbar">
+    <div class="container nav-content">
+      <h1 class="logo">404Fixers</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero-section">
-    <h2>Smart Solutions for Tech Troubles</h2>
-    <p>Your digital helpdesk, 24/7.</p>
-  </section>
+  <main class="container">
+    <section class="hero-section">
+      <h2>Smart Solutions for Tech Troubles</h2>
+      <p>Your digital helpdesk, 24/7.</p>
+    </section>
 
-  <!-- Info Cards -->
-  <div class="container">
-    <div class="info-card">
+    <section class="info-card" id="about">
       <h3>💬 How does it work?</h3>
       <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
-    </div>
+    </section>
 
-    <div class="info-card">
+    <section class="info-card" id="services">
       <h3>🤖 Meet our team</h3>
       <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
-    </div>
+    </section>
+  </main>
 
-    <div class="info-card">
-      <h3>💡 Talk to our AI Support Agent</h3>
-      <div id="chatbot-container" style="height: 500px;"></div>
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer>
-    © 2025 404Fixers. We fix what others fear.
+    <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
   </footer>
 
-  <!-- Flowise Chatbot Script -->
+  <!-- Flowise Chatbot -->
   <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.initFull({
+    Chatbot.init({
       chatflowid: "839116f6-8748-4eaa-ac1b-fc97a283f375",
       apiHost: "https://johnmiyahar-404fixers.hf.space",
-      chatContainer: "#chatbot-container"
     })
   </script>
 </body>
