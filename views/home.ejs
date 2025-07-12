@@ -3,57 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404Fixers - AI Support</title>
+  <title>404Fixers - Home</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-  <header class="main-header">
-    <h1>404Fixers</h1>
-    <nav>
-      <ul class="navbar">
-        <li><a href="/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#chat">Chat</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">404Fixers</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/home">Chat</a></li>
+    </ul>
+  </nav>
 
-  <main class="home-main">
-    <section class="intro">
-      <h2>Smart Solutions for Tech Troubles</h2>
+  <main class="main-container">
+    <section class="intro-section">
+      <h1>Smart Solutions for Tech Troubles</h1>
       <p>Your digital helpdesk, 24/7.</p>
+
+      <div class="feature">
+        <h2>💬 How does it work?</h2>
+        <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
+      </div>
+
+      <div class="feature">
+        <h2>🤖 Meet our team</h2>
+        <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
+      </div>
     </section>
 
-    <section id="about" class="about">
-      <h3>💬 How does it work?</h3>
-      <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
-    </section>
-
-    <section id="services" class="services">
-      <h3>🤖 Meet our team</h3>
-      <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
-    </section>
-
-    <section id="chat" class="chatbot-section">
-      <h3>💡 Talk to our AI Support Agent</h3>
-      <div id="flowise-chatbot"></div>
+    <section class="chatbot-section">
+      <h2>💡 Talk to our AI Support Agent</h2>
+      <div id="chatbot" class="chatbot-frame"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 404Fixers. We fix what others fear.</p>
+    <p>&copy; 2025 <strong>404Fixers</strong>. We fix what others fear.</p>
   </footer>
 
+  <!-- Flowise Full Chatbot -->
   <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.initFull({
       chatflowid: "839116f6-8748-4eaa-ac1b-fc97a283f375",
       apiHost: "https://johnmiyahar-404fixers.hf.space",
-      chatWidth: "100%",
-      chatHeight: "600px",
-      container: "#flowise-chatbot"
-    });
+      chatflowConfig: {},
+      theme: {
+        button: { backgroundColor: "#008080", color: "#fff" },
+        chatWindow: { width: "100%", height: "500px", borderRadius: "10px", padding: "10px" }
+      },
+      container: document.getElementById("chatbot")
+    })
   </script>
 </body>
 </html>
