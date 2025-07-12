@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>404Fixers | Home</title>
-  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -21,13 +25,14 @@
     </div>
   </nav>
 
-  <!-- Main content -->
-  <div class="container">
-    <section class="hero-section">
-      <h2>Smart Solutions for Tech Troubles</h2>
-      <p>Your digital helpdesk, 24/7.</p>
-    </section>
+  <!-- Hero -->
+  <section class="hero-section">
+    <h2>Smart Solutions for Tech Troubles</h2>
+    <p>Your digital helpdesk, 24/7.</p>
+  </section>
 
+  <!-- Info Cards -->
+  <div class="container">
     <div class="info-card">
       <h3>💬 How does it work?</h3>
       <p>Interact with our AI assistant using natural language. Get quick and clear IT support at your fingertips.</p>
@@ -38,9 +43,9 @@
       <p>Backed by cutting-edge AI agents and human-in-the-loop validation, we provide reliable solutions to your problems.</p>
     </div>
 
-    <div class="info-card chatbot-container">
+    <div class="info-card">
       <h3>💡 Talk to our AI Support Agent</h3>
-      <div id="chatbot-frame" class="chatbot-frame"></div>
+      <div id="chatbot-container" style="height: 500px;"></div>
     </div>
   </div>
 
@@ -49,18 +54,13 @@
     © 2025 404Fixers. We fix what others fear.
   </footer>
 
-  <!-- Flowise Embed Script -->
+  <!-- Flowise Chatbot Script -->
   <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-
-    Chatbot.init({
+    Chatbot.initFull({
       chatflowid: "839116f6-8748-4eaa-ac1b-fc97a283f375",
       apiHost: "https://johnmiyahar-404fixers.hf.space",
-      theme: "light",
-      container: "#chatbot-frame",
-      chatflowConfig: {
-        // You can add default inputs here if needed
-      },
+      chatContainer: "#chatbot-container"
     })
   </script>
 </body>
